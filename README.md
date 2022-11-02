@@ -1,7 +1,12 @@
-﻿# UST_Multimodal_Project
- 
-The codes for Multimodal Motion Detector and Nested Classification has been pushed in 2 seperate branches.
+﻿
+# Multimodel Object and Pose Detector
 
-Branches :-
-1. **Nested_Classification** - Contains Multimodal Object Detection for images using Mobilenet V2 and Resnet Model.
-2. **Multimodal_Motion_Detector** - Contains combination face recognition and pose detector model imported from cvzone.
+- This notebook contains the code for Object Detector and Pose Detector
+
+- The paths of the models have to be specified in the second block of the notebook (currently the relative paths of the models have already been set according to repository structure)
+
+- The object detector uses ssdlite_mobilenet_v2 model and the pose detector used human-pose-estimation-0001.
+
+- The object detector detects a person and idetifies it as a region of interest, this frame is cropped and sent to the pose detector to avoid processing of redundant pixels
+
+- Currently the models are working independetly but after adding the exexution block in an asynchronous loop those models will work concurrently
